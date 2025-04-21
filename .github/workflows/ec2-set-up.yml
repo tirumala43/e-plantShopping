@@ -18,7 +18,6 @@ jobs:
                     sudo yum install git -y && sudo yum install docker -y && sudo usermod -aG docker ${USER} && newgrp docker
                     echo "Docker and git is installed successfully"
                     echo"EC2 set up complete!"
-
                     END
             
             
