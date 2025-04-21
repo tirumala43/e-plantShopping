@@ -9,7 +9,7 @@ jobs:
             - name: ADD SSH key into amazon-keypair file with executeable permission
               run: |
                   echo "${{secrets.EC2_SSH_KEY}}" > amazon-keypair.pem
-                  chmod 600 amazon_keypair.pem
+                  chmod 600 amazon-keypair.pem
 
             - name: Install Docker & Git on EC2
               run: |
