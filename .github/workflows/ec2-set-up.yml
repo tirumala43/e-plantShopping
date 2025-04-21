@@ -13,7 +13,7 @@ jobs:
 
             - name: Install Docker & Git on EC2
               run: |
-                 ssh -o StrictHostKeyChecking=no -i amazon-keypair.pem ${{secrets.EC2_USER}}@${{secrets.EC2_IP_ADDR}} << 'END'
+                 ssh -o StrictHostKeyChecking=no -i amazon-keypair.pem ${{secrets.EC2_USER}}@${{secrets.EC2_IP_ADDR}} << END
                     sudo yum install update
                     sudo yum install git -y && sudo yum install docker -y && sudo usermod -aG docker ${USER} && newgrp docker
                     echo "Docker and git is installed successfully"
