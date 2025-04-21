@@ -16,7 +16,13 @@ jobs:
            - name: repo to EC2 
              run: |
               ssh -o StrictHostKeyChecking=no -i amazon-keypair.pem ${{secrets.EC2_USER}}@${{secrets.EC2_HOST}} << 'EOF'
-              rm -rf e-plantShopping || true 
-              git clone 
+                 rm -rf e-plantShopping || true 
+                 git clone https://github.com/tirumala43/e-plantShopping.git
+                 cd e-plantShopping
+                 docker stop e-plantshopping_app || true 
+                 docker rm e-plantshopping_app || true 
+                 docker build -t e-plantshopping_app . 
+                 docker run -d -p 80:80 --name eplant_cont e-plantshopping_app 
+              EOF
       
        
