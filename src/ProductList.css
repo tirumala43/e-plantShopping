@@ -47,6 +47,16 @@ body {
     align-items: center;
     justify-content: center;
 }
+.product-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.product-heading>h1{
+    border-bottom:black;
+    border-top:black;
+}
 
 
 .product-list {
